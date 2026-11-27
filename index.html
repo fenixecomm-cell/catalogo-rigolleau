@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Catálogo Rigolleau - Puja</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <h1>Catálogo Rigolleau</h1>
+      <span id="fecha-lista" class="fecha"></span>
+    </div>
+    <div class="buscador">
+      <input id="buscador-input" type="search" inputmode="search" autocomplete="off"
+             placeholder="Buscar por nombre, código, EAN o capacidad (ej: Oslo, 400 ml, cerveza)">
+      <button id="limpiar-busqueda" type="button" aria-label="Limpiar">&times;</button>
+    </div>
+    <div id="categorias" class="categorias"></div>
+  </header>
+
+  <main>
+    <p id="contador" class="contador"></p>
+    <div id="grilla" class="grilla"></div>
+    <p id="sin-resultados" class="sin-resultados" hidden>No encontramos productos con esa búsqueda. Probá con otra palabra.</p>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-fondo"></div>
+    <div class="modal-contenido">
+      <button id="cerrar-modal" class="cerrar" aria-label="Cerrar">&times;</button>
+      <div class="modal-grid">
+        <div class="modal-foto">
+          <img id="modal-img" src="" alt="">
+        </div>
+        <div class="modal-info">
+          <span id="modal-categoria" class="chip-categoria"></span>
+          <h2 id="modal-nombre"></h2>
+          <p id="modal-codigo" class="codigo"></p>
+          <table class="ficha">
+            <tbody id="modal-ficha"></tbody>
+          </table>
+          <h3>Precios mayorista (con IVA)</h3>
+          <table class="precios">
+            <tbody id="modal-variantes"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
